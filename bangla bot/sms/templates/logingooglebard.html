@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock title %}
+
+{% block frm %} 
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form by google bard</title>
+    <style>
+      form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+
+      input[type="submit"] {
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/login" method="post">
+      <h2>Login</h2>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+      <input type="submit" value="Login">
+    </form>
+  </body>
+</html>
+
+
+
+{% endblock frm %}

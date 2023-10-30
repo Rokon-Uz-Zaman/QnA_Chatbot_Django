@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact {% endblock title %}
+
+{% block frm %} 
+
+{% load crispy_forms_tags %} 
+
+
+
+<form>
+	{% csrf_token %}
+	<table action=" ">
+		{{form | crispy}}
+	</table>
+	
+
+	
+	<input type="submit" value="Save Contact">
+
+
+</form>
+
+<!--
+
+<form>
+	<br><br>
+	<label>Contact Name</label><br>
+	<input type="text" placeholder="Enter contact name" name="uname"> <br><br>
+	
+	<label>Contact Number</label><br>
+	<input type="number" placeholder="Contact number" name="password"> <br><br>
+	
+	<label>Information</label><br>
+	<textarea cols="42" rows="7" placeholder="Information "></textarea><br><br>
+
+	
+	<input type="submit" value="Save">
+
+
+</form>
+-->
+
+{% endblock frm %}

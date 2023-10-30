@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Send Message {% endblock title %}
+
+{% block frm %} 
+
+
+<form>
+	<label>Campaign Name</label><br>
+	
+	<input type="text" placeholder="Enter Campaign Name" name="cpname"> <br><br>
+	
+	<label>User id</label><br>
+	
+	<input type="number" placeholder="Enter your User id" name="userid"> <br><br>
+
+	<label>Phone Number</label><br>
+	
+	<input type="number" placeholder="Enter phone number" name="pnumber"> <br><br>
+
+	<label>Message</label><br>
+	<textarea cols="42" rows="7" placeholder="Type  message"> </textarea><br>
+
+	
+	<input type="submit" value="Send">
+
+
+</form>
+
+<!--
+<form>
+	
+	<table action=" ">
+		{{form}}
+	</table>
+	
+
+	
+	<input type="submit" value="Send">
+
+
+</form>
+
+-->
+
+
+{% endblock frm %}
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock title %}
+
+{% block frm %} 
+
+
+
+
+<form>
+	<br><br><br><br>
+	<label>Facebook page name</label><br>
+	<input type="text" placeholder="Enter your page name" name="uname" style=" width: 90% ; font-weight: bold ; border: 3px solid #cccccc ; padding:12px ; font-size:14px;"> <br><br>
+	
+  <label>Facebook page access token </label><br>
+	<input type="text" placeholder="Enter Facebook page access token" name="uname" style=" width: 90% ; font-weight: bold ; border: 3px solid #cccccc ; padding:12px ; font-size:14px;" > <br><br>
+	
+  <label>webhook url</label><br>
+	<input type="text" placeholder="Enter webhook url" name="uname" style=" width: 90% ; font-weight: bold ; border: 3px solid #cccccc ; padding:12px ; font-size:14px;" > <br><br>
+	
+	
+	<input type="submit" value="Submit" style=" width: 90% ; font-weight: bold ; border: 3px solid #cccccc ; padding:12px ; font-size:14px;">
+
+
+</form>
+
+
+{% endblock frm %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %} Message Reports {% endblock title %}
+
+
+
+
+
+  {% block reporthead %} 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    
+    
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
+
+  {% endblock reporthead %} 
+
+
+
+
+  {% block frm %} 
+
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Question</th>
+      <th scope="col">Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+ {% for qna in allqna  %}
+
+    
+    <tr>
+      <th scope="row">{{qna.id}}</th>
+      <td>{{qna.question}}</td>
+      <td>{{qna.answer}}</td>    
+    </tr>
+
+{% endfor %}
+
+
+<!--
+    <tr>
+      <th scope="row">campaign 56</th>
+      <td colspan="2">Test msg</td>
+      <td>018956545</td>
+    </tr>
+
+-->
+
+  </tbody>
+</table>
+
+
+
+{% endblock frm %}
+
+
