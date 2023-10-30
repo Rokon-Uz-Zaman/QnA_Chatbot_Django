@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Add QnA {% endblock title %}
+
+{% block frm %} 
+
+
+<form action="{% url 'addqna' %}" method="POST">
+	{% csrf_token %}
+	<br>
+	<h1>{{message}}</h1>
+
+	<label>Question</label><br>
+	<textarea name="question" placeholder="Enter question" style=" width: 90% ; height: 80px ; font-weight: bold ; border: 3px solid #cccccc ; padding:12px ; font-size:14px;" > </textarea>  <br>
+	
+	<label>Answer</label><br>
+    <textarea name="answer" placeholder="Enter answer" style=" width: 90% ; height: 220px ; font-weight: bold ; border: 3px solid #cccccc ; padding:12px ; font-size:14px;" > </textarea> 
+	
+	<input type="submit" value="Submit" style=" width: 90% ; font-weight: bold ; border: 3px solid #cccccc ; padding:12px ; font-size:14px;">
+
+
+</form>
+
+
+{% endblock frm %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock title %}
+
+{% block frm %} 
+
+
+<form action="/chatt" method="post">
+  {% csrf_token %}
+	<br><br>
+	<p>{{message}}</p>
+	<br><br>
+
+	<label>Message</label><br>
+	<textarea name="message" placeholder="Enter message" style=" width: 90% ; font-weight: bold ; border: 3px solid #cccccc ; padding:12px ; font-size:14px;" > </textarea>
+	
+	<input type="submit" value="Send" style=" width: 90% ; font-weight: bold ; border: 3px solid #cccccc ; padding:12px ; font-size:14px;">
+
+
+</form>
+
+
+{% endblock frm %}
