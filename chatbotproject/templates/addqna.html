@@ -8,7 +8,7 @@
 <form action="{% url 'addqna' %}" method="POST">
 	{% csrf_token %}
 	<br>
-	<h1>{{message}}</h1>
+	<h3>{{message}}</h3>
 
 	<label>Question</label><br>
 	<textarea name="question" placeholder="Enter question" style=" width: 90% ; height: 80px ; font-weight: bold ; border: 3px solid #cccccc ; padding:12px ; font-size:14px;" > </textarea>  <br>

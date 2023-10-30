@@ -4,8 +4,8 @@ from chatapp.models import Qna
 # Create your views here.
 
 
-def chat(request):
-	return render(request, 'chat.html')
+# chat(request):
+	#return render(request, 'chat.html')
 
 def qna(request):
 	allqna =Qna.objects.all()
@@ -26,13 +26,13 @@ def addqnat(request):
 
 
 
-'''
+
 def chat(request):
 	if request.method == 'POST':
 		message = request.POST['message'] #message type str
 		#print(type(msg)) #str
 		questi = "This is default question"
-		question = message 
+		questi = message 
 		allqna = Qna.objects.all()
 		qlist=[]
 		pklist =[]
@@ -40,4 +40,37 @@ def chat(request):
 			qlist.append(o.question)
 			pklist.append(o.id)
 
-'''
+		import requests
+
+		API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
+		headers = {"Authorization": "Bearer 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"}
+
+		def query(payload):
+			response = requests.post(API_URL, headers=headers, json=payload)
+			return response.json()
+		
+
+		payload = {
+			"inputs": {
+				"source_sentence": questi,
+				"sentences": qlist
+			},}
+
+
+		response = requests.post(API_URL, headers=headers, json=payload)
+		#str(print(response.json()))
+		rs = response.json()
+		lar_value =rs [0]
+		lar_index=0
+		for index , val in enumerate(rs):
+			if val >lar_value:
+				lar_value=val
+				lar_index=index
+
+		modelpk=str(pklist[lar_index])
+		objbypk= Qna.objects.get(pk=modelpk)
+		ansfromdb = objbypk.answer		
+		context = {'message': ansfromdb}
+		return render(request , 'chat.html',context)
+	else:
+		return render(request , 'chat.html')	
